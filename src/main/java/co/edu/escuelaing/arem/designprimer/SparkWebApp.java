@@ -67,11 +67,16 @@ public class SparkWebApp {
      * @throws java.io.IOException IoException
      * @param archivo archivo
      */
-    public static void leerArchivo(String lista) {
-             System.out.println(lista);
+    public static void leerArchivo(String listado) {
+
+        String[] parts = listado.split(",");
+        for (int i = 0; i < parts.length; i++) {
+            double nuevo = Double.parseDouble(parts[i]);
+            lista.agregar(nuevo);
+        }
     }
 
-   /**
+    /**
      * This main method uses SparkWeb static methods and lambda functions to
      * create a simple Hello World web app. It maps the lambda function to the
      * /hello relative URL.
@@ -108,6 +113,6 @@ public class SparkWebApp {
 
     private static String resultsPage(Request req, Response res) {
         leerArchivo(req.queryParams("numero"));
-        return req.queryParams("numero");
+        return "Media : " + media() + "   Derivada Parcial : " + derivadaParcial();
     }
 }
