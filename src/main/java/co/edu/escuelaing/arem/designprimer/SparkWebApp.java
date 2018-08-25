@@ -113,6 +113,19 @@ public class SparkWebApp {
 
     private static String resultsPage(Request req, Response res) {
         leerArchivo(req.queryParams("numero"));
-        return "Media : " + media() + "   Derivada Parcial : " + derivadaParcial();
+         String pageContent
+                = "<!DOCTYPE html>"
+                + "<html>"
+                + "<body>"
+                + "<h2>Media y derivada Parcial</h2>"
+                + "  * Resultado: <br>"
+                + "Media: " + media() 
+                + "  <br>"
+                + "Derivada parcial: " + derivadaParcial()
+                + "  <br>"
+                + "</body>"
+                + "</html>";
+        
+        return pageContent ;
     }
 }
