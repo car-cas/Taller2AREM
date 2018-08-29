@@ -39,12 +39,12 @@ public class SparkWebApp {
     }
 
     /**
-     * Metodo derivadaParcial, calcula la derivada parcial de una lista
+     * Metodo desviacionEstandar, calcula la desviacion estandar de una lista
      * encadenada
      *
      * @return total derivada parcial de la lista
      */
-    public static double derivadaParcial() {
+    public static double desviacionEstandar() {
         for (int i = 0; i < lista.getTamanio(); i++) {
             deri += lista.ver(i);
         }
@@ -99,7 +99,7 @@ public class SparkWebApp {
                 = "<!DOCTYPE html>"
                 + "<html>"
                 + "<body>"
-                + "<h2>Media y derivada Parcial</h2>"
+                + "<h2>Media y desviacion estandar</h2>"
                 + "<form action=\"/results\">"
                 + "  * Ingresar datos separados por comas : <br>"
                 + "  <input type=\"text\" name=\"numero\">"
@@ -117,11 +117,11 @@ public class SparkWebApp {
                 = "<!DOCTYPE html>"
                 + "<html>"
                 + "<body>"
-                + "<h2>Media y derivada Parcial</h2>"
+                + "<h2>Media y desviacion estandar</h2>"
                 + "  * Resultado: <br>"
                 + "Media: " + media() 
                 + "  <br>"
-                + "Derivada parcial: " + derivadaParcial()
+                + "Desviacion estandar: " + desviacionEstandar()
                 + "  <br>"
                 + "</body>"
                 + "</html>";
